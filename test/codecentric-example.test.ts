@@ -1,11 +1,11 @@
 import { expect as expectCDK, matchTemplate, MatchStyle } from '@aws-cdk/assert';
 import * as cdk from '@aws-cdk/core';
-import CodecentricExample = require('../lib/codecentric-example-stack');
+import Vpc = require('../lib/vpc-stack');
 
 test('Empty Stack', () => {
     const app = new cdk.App();
     // WHEN
-    const stack = new CodecentricExample.CodecentricExampleStack(app, 'MyTestStack');
+    const stack = new Vpc.VpcStack(app, 'MyTestStack');
     // THEN
     expectCDK(stack).to(matchTemplate({
       "Resources": {}
